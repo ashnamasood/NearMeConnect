@@ -12,7 +12,7 @@ class ServiceCategoryAdmin(admin.ModelAdmin):
 class ServiceProviderAdmin(admin.ModelAdmin):
     list_display = ('id', 'user', 'category', 'phone')
     search_fields = ('user__username', 'phone', 'address')
-    exclude = ('latitude', 'longitude')  # 👈 Hide from admin form
+    exclude = ('latitude', 'longitude') 
 
     def save_model(self, request, obj, form, change):
         # Auto-fill lat/lng from address
