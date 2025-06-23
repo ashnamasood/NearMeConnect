@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Your Service Requests</h1>
+    {% if requests %}
+    <div class="requests-list">
+        {% for req in requests %}
+        <div class="request-card">
+            <h2>Request to {{ req.provider.user.get_full_name }}</h2>
+            <p><strong>Status:</strong> 
+                {% if req.is_completed %}Completed
+                {% elif req.is_accepted %}Accepted
+                {% else %}Pending{% endif %}
+            </p>
+            <p>{{ req.message }}</p>
+            <small>{{ req.created_at }}</small>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No service requests yet. <a href="{% url 'providers' %}">Find a provider</a></p>
+    {% endif %}
+</div>
+{% endblock %}

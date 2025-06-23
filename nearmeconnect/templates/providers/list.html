@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Service Providers</h1>
+    <div class="providers-list">
+        {% for provider in providers %}
+        <div class="provider-card">
+            <img src="{{ provider.profile_image.url }}" alt="{{ provider.user.username }}">
+            <h2>{{ provider.user.get_full_name }}</h2>
+            <p><strong>Category:</strong> {{ provider.category.name }}</p>
+            <p><strong>Rating:</strong> {{ provider.rating }}/5</p>
+            <p>{{ provider.bio }}</p>
+            <a href="{% url 'requests' %}?provider_id={{ provider.id }}" class="btn">Request Service</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

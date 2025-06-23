@@ -1,0 +1,121 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}NearMeConnect{% endblock %}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f7fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #6e8efb;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 4rem 0;
+        }
+
+        .feature {
+            flex: 1;
+            min-width: 250px;
+            margin: 1rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    {% block header %}
+    <header>
+        <div class="container">
+            <h1>Welcome to NearMeConnect</h1>
+            <p class="tagline">Find and connect with local service providers near you</p>
+            <a href="/api/providers/" class="cta-button">Explore Services</a>
+        </div>
+    </header>
+    {% endblock %}
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 NearMeConnect. All rights reserved.</p>
+            <p>API available at <a href="/api/" style="color: #a777e3;">/api/</a></p>
+        </div>
+    </footer>
+</body>
+</html>
