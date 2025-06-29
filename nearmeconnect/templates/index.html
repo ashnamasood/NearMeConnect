@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Home - NearMeConnect{% endblock %}
+
+{% block content %}
+<div class="features">
+    <div class="feature" onclick="window.location.href='/providers/'">
+        <a href="/providers/">
+            <h2>🔍 Discover</h2>
+            <p>Find trusted service providers in your neighborhood</p>
+        </a>
+    </div>
+    <div class="feature" onclick="window.location.href='/requests/'">
+        <a href="/requests/">
+            <h2>📱 Connect</h2>
+            <p>Instant messaging with service professionals</p>
+        </a>
+    </div>
+    <div class="feature" onclick="window.location.href='/reviews/'">
+        <a href="/reviews/">
+            <h2>⭐ Review</h2>
+            <p>Share your experiences and help others</p>
+        </a>
+    </div>
+</div>
+{% endblock %}

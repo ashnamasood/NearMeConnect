@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.mp4
+*.jpg
+*.png
+media/
+staticfiles/
+node_modules/
+venv/
+.dockerignore
+.git
